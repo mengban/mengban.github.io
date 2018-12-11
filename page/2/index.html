@@ -516,212 +516,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/11-tensorflow保存模型/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="博主">
-      <meta itemprop="description" content="This is description">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mengban">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/18/11-tensorflow保存模型/" itemprop="url">
-                  tensorflow 模型保存
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2018-09-18 19:58:00" itemprop="dateCreated datePublished" datetime="2018-09-18T19:58:00+08:00">2018-09-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="更新于：2018-09-29 15:22:48" itemprop="dateModified" datetime="2018-09-29T15:22:48+08:00">2018-09-29</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tensorflow/" itemprop="url" rel="index"><span itemprop="name">tensorflow</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article：</span>
-                
-                <span title="Symbols count in article">705</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">1 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-tensorflow模型保存"><a href="#1-tensorflow模型保存" class="headerlink" title="1. tensorflow模型保存"></a>1. tensorflow模型保存</h3><figure class="highlight python"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="comment">##################################################3</span></span><br><span class="line">w1 = tf.Variable(tf.constant(<span class="number">1.0</span>), name=<span class="string">'w1'</span>)</span><br><span class="line">w2 = tf.Variable(tf.constant(<span class="number">2.0</span>), name=<span class="string">'w2'</span>)</span><br><span class="line">tf.add_to_collection(<span class="string">'vars'</span>, w1)</span><br><span class="line">tf.add_to_collection(<span class="string">'vars'</span>, w2)</span><br><span class="line">saver = tf.train.Saver()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line">    w1 = tf.add(w1, w2)</span><br><span class="line">    saver.save(sess,<span class="string">'./my-model'</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="以上代码生成了3个文件"><a href="#以上代码生成了3个文件" class="headerlink" title="以上代码生成了3个文件"></a>以上代码生成了3个文件</h4><ul>
-<li>1.my-model.ckpt.data-00000-of-00001</li>
-<li>2.my-model.ckpt.index</li>
-<li>3.my-model.ckpt.meta</li>
-</ul>
-<h3 id="2-模型加载"><a href="#2-模型加载" class="headerlink" title="2.模型加载"></a>2.模型加载</h3><figure class="highlight python"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    saver = tf.train.Saver()</span><br><span class="line">    saver.restore(sess, <span class="string">"./my-model.ckpt"</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>尽管以上代码中指定的文件名字并没有声明，但是通过saver还是可以自动加载出模型的。</strong></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/9 -linux运维/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -878,6 +672,212 @@
 <h3 id="6-fork-函数"><a href="#6-fork-函数" class="headerlink" title="6.fork()函数"></a>6.fork()函数</h3><blockquote>
 <p>只需记住一点:fork()函数调用一次返回两次。<br>在父进程中 根据返回值(子进程PID)继续执行<br>在子进程中 根据返回值(0) 再继续执行。<br>如下例子  根据短路原则 main作为父进程 会创建子进程1 子进程1创建子进程2。<br>子进程保存了父进程前的代码状态 并直接运行。<br><figure class="highlight c"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">fork()||fork();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/11-tensorflow保存模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="博主">
+      <meta itemprop="description" content="This is description">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mengban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/18/11-tensorflow保存模型/" itemprop="url">
+                  tensorflow 模型保存
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2018-09-18 19:58:00" itemprop="dateCreated datePublished" datetime="2018-09-18T19:58:00+08:00">2018-09-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2018-09-29 15:22:48" itemprop="dateModified" datetime="2018-09-29T15:22:48+08:00">2018-09-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tensorflow/" itemprop="url" rel="index"><span itemprop="name">tensorflow</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article：</span>
+                
+                <span title="Symbols count in article">705</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">1 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-tensorflow模型保存"><a href="#1-tensorflow模型保存" class="headerlink" title="1. tensorflow模型保存"></a>1. tensorflow模型保存</h3><figure class="highlight python"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="comment">##################################################3</span></span><br><span class="line">w1 = tf.Variable(tf.constant(<span class="number">1.0</span>), name=<span class="string">'w1'</span>)</span><br><span class="line">w2 = tf.Variable(tf.constant(<span class="number">2.0</span>), name=<span class="string">'w2'</span>)</span><br><span class="line">tf.add_to_collection(<span class="string">'vars'</span>, w1)</span><br><span class="line">tf.add_to_collection(<span class="string">'vars'</span>, w2)</span><br><span class="line">saver = tf.train.Saver()</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line">    w1 = tf.add(w1, w2)</span><br><span class="line">    saver.save(sess,<span class="string">'./my-model'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="以上代码生成了3个文件"><a href="#以上代码生成了3个文件" class="headerlink" title="以上代码生成了3个文件"></a>以上代码生成了3个文件</h4><ul>
+<li>1.my-model.ckpt.data-00000-of-00001</li>
+<li>2.my-model.ckpt.index</li>
+<li>3.my-model.ckpt.meta</li>
+</ul>
+<h3 id="2-模型加载"><a href="#2-模型加载" class="headerlink" title="2.模型加载"></a>2.模型加载</h3><figure class="highlight python"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    saver = tf.train.Saver()</span><br><span class="line">    saver.restore(sess, <span class="string">"./my-model.ckpt"</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>尽管以上代码中指定的文件名字并没有声明，但是通过saver还是可以自动加载出模型的。</strong></p>
 
           
         
@@ -2703,7 +2703,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">18k</span>
+    <span title="Symbols count total">19k</span>
   
 
   
@@ -2712,7 +2712,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">33 mins.</span>
+    <span title="Reading time total">35 mins.</span>
   
 </div>
 
