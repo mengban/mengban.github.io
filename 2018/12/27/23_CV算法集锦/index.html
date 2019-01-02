@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article：</span>
                 
-                <span title="Symbols count in article">430</span>
+                <span title="Symbols count in article">619</span>
               
 
               
@@ -436,12 +436,25 @@
 </li>
 <li><p>3 从每列次大的得分建议框开始，重复步骤2；</p>
 </li>
-<li><p>4 重复步骤③直到遍历完该列所有建议框；</p>
+<li><p>4 重复步骤3直到遍历完该列所有建议框；</p>
 </li>
 <li><p>5 遍历完2000×20维矩阵所有列，即所有物体种类都做一遍非极大值抑制；</p>
 </li>
 </ul>
-<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3>
+<h3 id="2-Batch-Normalization-reference"><a href="#2-Batch-Normalization-reference" class="headerlink" title="2. Batch Normalization reference"></a>2. Batch Normalization <a href="https://www.cnblogs.com/zhoug2020/p/8258432.html" target="_blank" rel="noopener">reference</a></h3><ul>
+<li>为什么要进行特征归一化:<ul>
+<li>归一化后加快了梯度下降求最优解的速度;</li>
+<li>归一化有可能提高精度;</li>
+</ul>
+</li>
+<li>简单缩放 min-max</li>
+<li>标准差标准化 z-score 0均值标准化(zero-mean normalization)<ul>
+<li>经过处理的数据符合标准正态分布，即均值为0，标准差为1，其转化函数为</li>
+</ul>
+</li>
+<li>非线性归一化 比如log</li>
+</ul>
+
       
     </div>
 
@@ -487,6 +500,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/27/24_GPU问题集锦/" rel="prev" title="GPU问题集锦">
+                GPU问题集锦 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -556,7 +573,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -595,7 +612,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -658,7 +679,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -703,7 +728,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-NMS算法-非极大值抑制算法"><span class="nav-number">1.</span> <span class="nav-text">1. NMS算法(非极大值抑制算法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2.</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-NMS算法-非极大值抑制算法"><span class="nav-number">1.</span> <span class="nav-text">1. NMS算法(非极大值抑制算法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Batch-Normalization-reference"><span class="nav-number">2.</span> <span class="nav-text">2. Batch Normalization reference</span></a></li></ol></div>
             
 
           </div>
@@ -726,7 +751,7 @@
         <!---add by lius--->
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <!---add by lius--->
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -738,7 +763,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">21k</span>
+    <span title="Symbols count total">22k</span>
   
 
   
@@ -747,7 +772,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">38 mins.</span>
+    <span title="Reading time total">40 mins.</span>
   
 </div>
 
