@@ -788,7 +788,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article：</span>
                 
-                <span title="Symbols count in article">619</span>
+                <span title="Symbols count in article">936</span>
               
 
               
@@ -802,7 +802,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">1 mins.</span>
+                <span title="Reading time">2 mins.</span>
               
             </div>
           
@@ -850,6 +850,19 @@
 </li>
 <li>非线性归一化 比如log</li>
 </ul>
+<h3 id="3-动量更新方法"><a href="#3-动量更新方法" class="headerlink" title="3.动量更新方法"></a>3.动量更新方法</h3><ul>
+<li><p>传统SGD更新方法。更新速度慢</p>
+<figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x += -learning_rate * dx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>momentum update</p>
+<figure class="highlight bash"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v += mu * v - learning_rate * dx</span><br><span class="line">x += v</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>其中一般的，v初始为0，mu是优化参数，一般初始化参数为0.9，当使用交叉验证的时候，参数mu一般设置成[0.5,0.9,0.95,0.99]，在开始训练的时候，梯度下降较快，可以设置mu为0.5，在一段时间后逐渐变慢了，mu可以设置为0.9、0.99。也正是因为有了“惯性”，这个比SGD会稳定一些。</p>
+</blockquote>
+</blockquote>
 
           
         
