@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article：</span>
                 
-                <span title="Symbols count in article">5.8k</span>
+                <span title="Symbols count in article">6k</span>
               
 
               
@@ -420,7 +420,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">10 mins.</span>
+                <span title="Reading time">11 mins.</span>
               
             </div>
           
@@ -520,6 +520,13 @@
 </blockquote>
 <h3 id="20-为什么的大部分语言都是0-based索引。"><a href="#20-为什么的大部分语言都是0-based索引。" class="headerlink" title="20.为什么的大部分语言都是0-based索引。"></a>20.为什么的大部分语言都是0-based索引。</h3><blockquote>
 <p>首先明确索引脚标表示的是对首元素的偏移量。基于0-based的脚标表示 这个在汇编语言时代可以直接使用MOV指令比较方便。即下标可以直接等价成MOV值到偏移寄存器里，而基址寄存器里面保存的是数组头的地址，结合这两个就可以寻址取值。在python中  据python之父介绍 使用0-based的原因主要是python的半开区间切片语法与0-based完美契合。Fortan使用1-based。</p>
+</blockquote>
+<h3 id="21-python-字符串拼接"><a href="#21-python-字符串拼接" class="headerlink" title="21.python 字符串拼接"></a>21.python 字符串拼接</h3><blockquote>
+<p>简介两种:</p>
+<ul>
+<li>1 str1 + str2</li>
+<li>2 ‘’.join([‘1’,’2’]) <figure class="highlight python"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">"abc"</span></span><br><span class="line">str2 = <span class="string">'def'</span></span><br><span class="line">print(str1 + str1)</span><br><span class="line"><span class="comment"># ""abcdef</span></span><br><span class="line">print(<span class="string">''</span>.join([<span class="string">'1'</span>,<span class="string">'2'</span>])) </span><br><span class="line"><span class="comment"># '12'</span></span><br><span class="line">print(<span class="string">'a'</span>.join([<span class="string">'1'</span>,<span class="string">'2'</span>]))</span><br><span class="line"><span class="comment">#'1a2'</span></span><br></pre></td></tr></table></figure></li>
+</ul>
 </blockquote>
 
       
@@ -800,7 +807,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-python求整"><span class="nav-number">1.</span> <span class="nav-text">1.python求整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-位操作"><span class="nav-number">2.</span> <span class="nav-text">2.位操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-lambda"><span class="nav-number">3.</span> <span class="nav-text">4.lambda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-enumerate"><span class="nav-number">4.</span> <span class="nav-text">5.enumerate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-set-求交-并-差集"><span class="nav-number">5.</span> <span class="nav-text">6.set 求交 并 差集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-filter-函数"><span class="nav-number">6.</span> <span class="nav-text">7.filter 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-python-中的None-True-False"><span class="nav-number">7.</span> <span class="nav-text">8.python 中的None True False</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-牛逼的sum函数。"><span class="nav-number">8.</span> <span class="nav-text">9.牛逼的sum函数。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-单引号-双引号-三引号"><span class="nav-number">9.</span> <span class="nav-text">10. 单引号 双引号 三引号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-python-赋值-浅拷贝-深拷贝"><span class="nav-number">10.</span> <span class="nav-text">11. python 赋值 浅拷贝 深拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-装饰函数"><span class="nav-number">11.</span> <span class="nav-text">12.装饰函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-map-reduce函数。起源于Google鼎鼎大名-Map-Reduce论文。"><span class="nav-number">12.</span> <span class="nav-text">13.map/reduce函数。起源于Google鼎鼎大名 Map/Reduce论文。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-赋值"><span class="nav-number">13.</span> <span class="nav-text">14.赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15"><span class="nav-number">14.</span> <span class="nav-text">15.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-zip-函数"><span class="nav-number">15.</span> <span class="nav-text">16.zip 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-join-函数"><span class="nav-number">16.</span> <span class="nav-text">17 .join()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-可迭代对象。"><span class="nav-number">17.</span> <span class="nav-text">18 可迭代对象。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-python中的元组。"><span class="nav-number">18.</span> <span class="nav-text">19.python中的元组。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-为什么的大部分语言都是0-based索引。"><span class="nav-number">19.</span> <span class="nav-text">20.为什么的大部分语言都是0-based索引。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-python求整"><span class="nav-number">1.</span> <span class="nav-text">1.python求整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-位操作"><span class="nav-number">2.</span> <span class="nav-text">2.位操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-lambda"><span class="nav-number">3.</span> <span class="nav-text">4.lambda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-enumerate"><span class="nav-number">4.</span> <span class="nav-text">5.enumerate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-set-求交-并-差集"><span class="nav-number">5.</span> <span class="nav-text">6.set 求交 并 差集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-filter-函数"><span class="nav-number">6.</span> <span class="nav-text">7.filter 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-python-中的None-True-False"><span class="nav-number">7.</span> <span class="nav-text">8.python 中的None True False</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-牛逼的sum函数。"><span class="nav-number">8.</span> <span class="nav-text">9.牛逼的sum函数。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-单引号-双引号-三引号"><span class="nav-number">9.</span> <span class="nav-text">10. 单引号 双引号 三引号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-python-赋值-浅拷贝-深拷贝"><span class="nav-number">10.</span> <span class="nav-text">11. python 赋值 浅拷贝 深拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-装饰函数"><span class="nav-number">11.</span> <span class="nav-text">12.装饰函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-map-reduce函数。起源于Google鼎鼎大名-Map-Reduce论文。"><span class="nav-number">12.</span> <span class="nav-text">13.map/reduce函数。起源于Google鼎鼎大名 Map/Reduce论文。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-赋值"><span class="nav-number">13.</span> <span class="nav-text">14.赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15"><span class="nav-number">14.</span> <span class="nav-text">15.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-zip-函数"><span class="nav-number">15.</span> <span class="nav-text">16.zip 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-join-函数"><span class="nav-number">16.</span> <span class="nav-text">17 .join()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-可迭代对象。"><span class="nav-number">17.</span> <span class="nav-text">18 可迭代对象。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-python中的元组。"><span class="nav-number">18.</span> <span class="nav-text">19.python中的元组。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-为什么的大部分语言都是0-based索引。"><span class="nav-number">19.</span> <span class="nav-text">20.为什么的大部分语言都是0-based索引。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-python-字符串拼接"><span class="nav-number">20.</span> <span class="nav-text">21.python 字符串拼接</span></a></li></ol></div>
             
 
           </div>
@@ -844,7 +851,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">47 mins.</span>
+    <span title="Reading time total">48 mins.</span>
   
 </div>
 

@@ -2327,7 +2327,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article：</span>
                 
-                <span title="Symbols count in article">5.8k</span>
+                <span title="Symbols count in article">6k</span>
               
 
               
@@ -2341,7 +2341,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">10 mins.</span>
+                <span title="Reading time">11 mins.</span>
               
             </div>
           
@@ -2443,6 +2443,13 @@
 </blockquote>
 <h3 id="20-为什么的大部分语言都是0-based索引。"><a href="#20-为什么的大部分语言都是0-based索引。" class="headerlink" title="20.为什么的大部分语言都是0-based索引。"></a>20.为什么的大部分语言都是0-based索引。</h3><blockquote>
 <p>首先明确索引脚标表示的是对首元素的偏移量。基于0-based的脚标表示 这个在汇编语言时代可以直接使用MOV指令比较方便。即下标可以直接等价成MOV值到偏移寄存器里，而基址寄存器里面保存的是数组头的地址，结合这两个就可以寻址取值。在python中  据python之父介绍 使用0-based的原因主要是python的半开区间切片语法与0-based完美契合。Fortan使用1-based。</p>
+</blockquote>
+<h3 id="21-python-字符串拼接"><a href="#21-python-字符串拼接" class="headerlink" title="21.python 字符串拼接"></a>21.python 字符串拼接</h3><blockquote>
+<p>简介两种:</p>
+<ul>
+<li>1 str1 + str2</li>
+<li>2 ‘’.join([‘1’,’2’]) <figure class="highlight python"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">"abc"</span></span><br><span class="line">str2 = <span class="string">'def'</span></span><br><span class="line">print(str1 + str1)</span><br><span class="line"><span class="comment"># ""abcdef</span></span><br><span class="line">print(<span class="string">''</span>.join([<span class="string">'1'</span>,<span class="string">'2'</span>])) </span><br><span class="line"><span class="comment"># '12'</span></span><br><span class="line">print(<span class="string">'a'</span>.join([<span class="string">'1'</span>,<span class="string">'2'</span>]))</span><br><span class="line"><span class="comment">#'1a2'</span></span><br></pre></td></tr></table></figure></li>
+</ul>
 </blockquote>
 
           
@@ -2712,7 +2719,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">47 mins.</span>
+    <span title="Reading time total">48 mins.</span>
   
 </div>
 
