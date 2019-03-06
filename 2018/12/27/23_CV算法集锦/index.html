@@ -394,7 +394,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article：</span>
                 
-                <span title="Symbols count in article">1.3k</span>
+                <span title="Symbols count in article">1.5k</span>
               
 
               
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">2 mins.</span>
+                <span title="Reading time">3 mins.</span>
               
             </div>
           
@@ -467,6 +467,11 @@
 </blockquote>
 <h3 id="4-CE交叉熵-与-BCE二分类交叉熵"><a href="#4-CE交叉熵-与-BCE二分类交叉熵" class="headerlink" title="4.CE交叉熵 与 BCE二分类交叉熵"></a>4.CE交叉熵 与 BCE二分类交叉熵</h3><p>二者是不一样的。参见(CE and BCE)[<a href="https://zhuanlan.zhihu.com/p/48078990]" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/48078990]</a></p>
 <h3 id="5-BP算法"><a href="#5-BP算法" class="headerlink" title="5.BP算法"></a>5.BP算法</h3><p>BP算法的整体思路如下：对于每个给定的训练样本，首先进行前向计算，计算出网络中每一层的激活值和网络的输出。对于最后一层(输出层)，我们可以直接计算出网络的输出值与已经给出的标签值(label)直接的差距，我们将这个值定义为残差δ。对于输出层之前的隐藏层L，我们将根据L+1层各节点的加权平均值来计算第L层的残差。<br>插入一些我个人对BP算法的一点比较容易理解的解释(如有错误请指出)：在反向传播过程中，若第x层的a节点通过权值W对x+1层的b节点有贡献，则在反向传播过程中，梯度通过权值W从b节点传播回a节点。不管下面的公式推导，还是后面的卷积神经网络，在反向传播的过程中，都是遵循这样的一个规律。</p>
+<h3 id="6-anchor的还原。"><a href="#6-anchor的还原。" class="headerlink" title="6.anchor的还原。"></a>6.anchor的还原。</h3><p>Q:在SSD YOLO 以及Faster-RCNN中均提出了一个anchor的概念,所以问题产生了:在feature map上产生的anchor是在怎么还原到原图上的呢?</p>
+<ul>
+<li>Faster R-CNN<br>Faster RCNN中采用3<em>3卷积 padding为1，然后经过2\</em>2的pooling。输出的尺寸刚好类似于将原始图片进行了resize。故将anchor直接还原。(等待少卿确认)</li>
+<li>SSD 中采用了类似的结构??</li>
+</ul>
 
       
     </div>
@@ -741,7 +746,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-NMS算法-非极大值抑制算法"><span class="nav-number">1.</span> <span class="nav-text">1. NMS算法(非极大值抑制算法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Batch-Normalization-reference"><span class="nav-number">2.</span> <span class="nav-text">2. Batch Normalization reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-动量更新方法"><span class="nav-number">3.</span> <span class="nav-text">3.动量更新方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-CE交叉熵-与-BCE二分类交叉熵"><span class="nav-number">4.</span> <span class="nav-text">4.CE交叉熵 与 BCE二分类交叉熵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-BP算法"><span class="nav-number">5.</span> <span class="nav-text">5.BP算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-NMS算法-非极大值抑制算法"><span class="nav-number">1.</span> <span class="nav-text">1. NMS算法(非极大值抑制算法)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Batch-Normalization-reference"><span class="nav-number">2.</span> <span class="nav-text">2. Batch Normalization reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-动量更新方法"><span class="nav-number">3.</span> <span class="nav-text">3.动量更新方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-CE交叉熵-与-BCE二分类交叉熵"><span class="nav-number">4.</span> <span class="nav-text">4.CE交叉熵 与 BCE二分类交叉熵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-BP算法"><span class="nav-number">5.</span> <span class="nav-text">5.BP算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-anchor的还原。"><span class="nav-number">6.</span> <span class="nav-text">6.anchor的还原。</span></a></li></ol></div>
             
 
           </div>
@@ -776,7 +781,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">26k</span>
+    <span title="Symbols count total">27k</span>
   
 
   
