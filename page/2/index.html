@@ -2327,7 +2327,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article：</span>
                 
-                <span title="Symbols count in article">6.1k</span>
+                <span title="Symbols count in article">7.3k</span>
               
 
               
@@ -2341,7 +2341,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">11 mins.</span>
+                <span title="Reading time">13 mins.</span>
               
             </div>
           
@@ -2451,9 +2451,45 @@
 <p>简介两种:</p>
 <ul>
 <li>1 str1 + str2</li>
-<li>2 ‘’.join([‘1’,’2’]) <figure class="highlight python"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">"abc"</span></span><br><span class="line">str2 = <span class="string">'def'</span></span><br><span class="line">print(str1 + str1)</span><br><span class="line"><span class="comment"># ""abcdef</span></span><br><span class="line">print(<span class="string">''</span>.join([<span class="string">'1'</span>,<span class="string">'2'</span>])) </span><br><span class="line"><span class="comment"># '12'</span></span><br><span class="line">print(<span class="string">'a'</span>.join([<span class="string">'1'</span>,<span class="string">'2'</span>]))</span><br><span class="line"><span class="comment">#'1a2'</span></span><br></pre></td></tr></table></figure></li>
+<li>2 ‘’.join([‘1’,’2’]) <figure class="highlight python"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">"abc"</span></span><br><span class="line">str2 = <span class="string">'def'</span></span><br><span class="line">print(str1 + str1)</span><br><span class="line"><span class="comment"># ""abcdef</span></span><br><span class="line">print(<span class="string">''</span>.join([<span class="string">'1'</span>,<span class="string">'2'</span>])) </span><br><span class="line"><span class="comment"># '12'</span></span><br><span class="line">print(<span class="string">'a'</span>.join([<span class="string">'1'</span>,<span class="string">'2'</span>]))</span><br><span class="line"><span class="comment">#'1a2'</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </blockquote>
+<h3 id="22-python-格式化输出"><a href="#22-python-格式化输出" class="headerlink" title="22.python 格式化输出"></a>22.python 格式化输出</h3><ol>
+<li>整数输出</li>
+</ol>
+<ul>
+<li>%o 八进制</li>
+<li>%d 十进制</li>
+<li>%x 十六进制</li>
+</ul>
+<figure class="highlight python"><figcaption><span>&#123;.line-number&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'%d'</span>%<span class="number">20</span>)</span><br><span class="line"><span class="comment">#20</span></span><br><span class="line">print(<span class="string">'%x'</span>%<span class="number">20</span>)</span><br><span class="line"><span class="comment">#14</span></span><br><span class="line">print(<span class="string">'%o'</span>%<span class="number">20</span>)</span><br><span class="line"><span class="comment">#24</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>浮点数输出</li>
+</ol>
+<ul>
+<li>%f 默认保留小数点后六位。默认进行了四舍五入</li>
+<li><p>%.3f 保留三位小数点</p>
+</li>
+<li><p>%e 保留小数点后六位 以指数形式</p>
+</li>
+<li>%.3e 保留三位小数 科学计数法</li>
+</ul>
+<figure class="highlight python"><figcaption><span>&#123;.line-number&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'%f'</span>%<span class="number">20</span>)</span><br><span class="line"><span class="comment">#20.000000</span></span><br><span class="line">print(<span class="string">'%6.f'</span>%<span class="number">20</span>)</span><br><span class="line"><span class="comment">#    20</span></span><br><span class="line">print(<span class="string">'%.6f'</span>%<span class="number">20</span>)</span><br><span class="line"><span class="comment">#20.000000</span></span><br><span class="line">print(<span class="string">'%.6e'</span>%<span class="number">20</span>)</span><br><span class="line"><span class="comment">#2.000000e+01</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'%.2f'</span>%<span class="number">20.155</span>)</span><br><span class="line"><span class="comment">#20.16</span></span><br><span class="line">print(<span class="string">'%.2f'</span>%<span class="number">20.154</span>)</span><br><span class="line"><span class="comment">#20.15</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>字符串输出。</li>
+</ol>
+<ul>
+<li><p>%s </p>
+<figure class="highlight python"><figcaption><span>&#123;.line-number&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'%s'</span>% <span class="string">'hello world'</span>)</span><br><span class="line"><span class="comment">#hello world</span></span><br><span class="line">print(<span class="string">'%20s'</span>% <span class="string">'hello world'</span>)  <span class="comment">#右对齐20位</span></span><br><span class="line"><span class="comment">#         hello world</span></span><br><span class="line">print(<span class="string">'%-20s'</span>% <span class="string">'hello world'</span>) <span class="comment">#左对齐20位</span></span><br><span class="line"><span class="comment">#hello world</span></span><br><span class="line">print(<span class="string">'%10.2s'</span> % <span class="string">'hello world'</span>)  <span class="comment"># 右对齐，取2位</span></span><br><span class="line"><span class="comment">#         he</span></span><br><span class="line">print(<span class="string">'%-10.2s'</span> % <span class="string">'hello world'</span>)  <span class="comment"># 左对齐，取2位</span></span><br><span class="line"><span class="comment">#he</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>format用法。相对基本格式化采用的%方法，format功能更为强大。</p>
+</li>
+<li>不带编号，即“{}”</li>
+<li>带数字编号，可调换顺序，即“{1}”、“{2}”</li>
+<li>带关键字，即“{a}”、“{tom}”</li>
+</ul>
+<figure class="highlight python"><figcaption><span>&#123;.line-number&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">print(<span class="string">'&#123;&#125;&#123;&#125;'</span>.format(<span class="string">'hello'</span>,<span class="string">'world'</span>))</span><br><span class="line"><span class="comment">#helloworld</span></span><br><span class="line">print(<span class="string">'&#123;&#125; &#123;&#125;'</span>.format(<span class="string">'hello'</span>,<span class="string">'world'</span>))</span><br><span class="line"><span class="comment">#hello world</span></span><br><span class="line">print(<span class="string">'&#123;a&#125; &#123;b&#125;'</span>.format(a=<span class="string">'hello'</span>,b=<span class="string">'world'</span>))</span><br><span class="line"><span class="comment">#hello world</span></span><br><span class="line">print(<span class="string">'&#123;b&#125; &#123;a&#125;'</span>.format(a=<span class="string">'hello'</span>,b=<span class="string">'world'</span>))</span><br><span class="line"><span class="comment">#world hello</span></span><br><span class="line">print(<span class="string">'&#123;0&#125; &#123;1&#125;'</span>.format(<span class="string">'hello'</span>,<span class="string">'world'</span>))</span><br><span class="line"><span class="comment">#hello world</span></span><br><span class="line">print(<span class="string">'&#123;1&#125; &#123;0&#125;'</span>.format(<span class="string">'hello'</span>,<span class="string">'world'</span>))</span><br><span class="line"><span class="comment">#world hello</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -2713,7 +2749,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="Symbols count total">28k</span>
+    <span title="Symbols count total">29k</span>
   
 
   
@@ -2722,7 +2758,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="Reading time total">51 mins.</span>
+    <span title="Reading time total">54 mins.</span>
   
 </div>
 
